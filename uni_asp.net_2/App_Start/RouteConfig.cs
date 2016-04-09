@@ -14,6 +14,26 @@ namespace uni_asp.net_2
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "Files List",
+                url: "files",
+                defaults: new { controller = "Files", action = "Index" }
+            );
+
+            routes.MapRoute(
+                name: "File Content",
+                url: "files/{filename}",
+                defaults: new { controller = "Files", action = "content" }
+            );
+
+            routes.MapRoute(
+                name: "Files",
+                url: "files/{filename}/{action}",
+                defaults: new { controller = "Files", action = "content" }
+            );
+
+
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }

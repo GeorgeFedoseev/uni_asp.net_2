@@ -19,11 +19,6 @@ namespace uni_asp.net_2
                 defaults: new { controller = "Files", action = "Index" }
             );
 
-            routes.MapRoute(
-                name: "File Content",
-                url: "files/{filename}",
-                defaults: new { controller = "Files", action = "content" }
-            );
 
             routes.MapRoute(
                 name: "Files",
